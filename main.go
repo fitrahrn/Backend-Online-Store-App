@@ -22,9 +22,11 @@ func main(){
 	router.GET("/products",controllers.ProductsIndex)
 	router.GET("/products/:id",controllers.ProductsShow)
 	router.POST("/carts",controllers.OrderCreate)
-	router.PUT("/carts/:id",controllers.OrdersUpdate)
+	router.PUT("/carts/payment/:id",controllers.OrdersUpdate)
 	router.GET("/carts",controllers.OrdersIndex)
 	router.GET("/carts/:id",controllers.OrdersShow)
 	router.DELETE("/carts/:id",controllers.OrderDelete)
+	router.POST("/register",controllers.AccountCreate)
+	router.POST("/login",controllers.AccountLogin)
 	router.Run()
 }
