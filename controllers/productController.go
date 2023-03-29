@@ -7,7 +7,7 @@ import (
 	"example/Backend-Online-Stor-App/initializers"
 	
 )
-func PostsCreate (c *gin.Context){
+func ProductCreate(c *gin.Context){
 	var body struct {
 		Name string 
 		Description string 
@@ -31,7 +31,7 @@ func PostsCreate (c *gin.Context){
 	})
 }
 
-func PostsIndex(c *gin.Context){
+func ProductsIndex(c *gin.Context){
 	var products []models.Product
 	initializers.DB.Find(&products)
 	
@@ -40,7 +40,7 @@ func PostsIndex(c *gin.Context){
 	})
 }
 
-func PostsShow(c *gin.Context){
+func ProductsShow(c *gin.Context){
 	//Get id for url
 	id := c.Param("id")
 	var product models.Product
@@ -51,7 +51,7 @@ func PostsShow(c *gin.Context){
 	})
 }
 
-func PostsUpdate(c *gin.Context){
+func ProductsUpdate(c *gin.Context){
 	id := c.Param("id")
 	var body struct {
 		Name string 
